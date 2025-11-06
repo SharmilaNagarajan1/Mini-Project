@@ -1,26 +1,24 @@
 name: Deploy Azure Storage
 
-# on:
-#   push:
-#     branches:
-#       - 'feature/**'
-#       - 'main'
-#   pull_request:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'main'
+  pull_request:
+    branches:
+      - main
 
 jobs:
   terraform:
-    name: Terraform Plan or Apply
-    runs-on: ubuntu-latest # Change to ubuntu-latest if not using self-hosted
+    name: Storage Account - Terraform CICD
+    runs-on: self-hosted # Change to ubuntu-latest if not using self-hosted runner
 
     env:
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-      # TF_VAR_storage_account_name: ${{ vars.TF_VAR_storage_account_name }}
-      # TF_VAR_location: ${{ vars.TF_VAR_location }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       REPO: ${{ github.repository }}
       HEAD_BRANCH: ${{ github.head_ref || github.ref_name }}
@@ -82,3 +80,5 @@ jobs:
       - name: Terraform Apply (only on main)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve 
+
+
