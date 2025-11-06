@@ -10,7 +10,7 @@ variable "location" {
 
 variable name_prefix {
   type = string
-  default = "06112025"
+  default = "sa061125"
 }
 
 variable "account_replication_type" {
