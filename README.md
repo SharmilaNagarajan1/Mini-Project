@@ -3,8 +3,8 @@
 
 This mini project automates the provisioning of an **Azure Storage Account** using **Terraform Cloud** and **GitHub Actions CI/CD pipeline**.  
 It leverages a **private Terraform module** to ensure reusable, consistent, and secure deployments.
+```
 
----
 
 ## 📁 Project Structure
 
@@ -22,7 +22,6 @@ Deploy-Azure-Storage/
 
 ````
 
----
 
 ## 🧩 Project Overview
 
@@ -33,7 +32,7 @@ This project:
 - Executes **Terraform Apply** on `main` branch merge or push.
 - Runs Terraform on **self-hosted GitHub runners** for full control and reliability.
 
----
+
 
 ## ⚙️ Prerequisites
 
@@ -140,6 +139,4 @@ terraform destroy -auto-approve
 | **Security**          | Managed using GitHub Encrypted Secrets                 |
 | **Automation**        | PR creation, reviewer assignment, and apply automation |
 
----
 
-```
