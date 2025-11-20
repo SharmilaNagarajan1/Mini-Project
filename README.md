@@ -1,9 +1,9 @@
-```markdown
+
 # 🚀 Deploy Azure Storage using Terraform & GitHub Actions
 
 This mini project automates the provisioning of an **Azure Storage Account** using **Terraform Cloud** and **GitHub Actions CI/CD pipeline**.  
 It leverages a **private Terraform module** to ensure reusable, consistent, and secure deployments.
-```
+
 
 
 ## 📁 Project Structure
